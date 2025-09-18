@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatório de Relógio de Ponto</title>
+  <link rel="stylesheet" href="relatorio.css"/>
+</head>
+<body>
+  <header class="container">
+    <h1>Relatório de Relógio de Ponto</h1>
+    <p class="subtitle">Cadastre batidas e gere o relatório com filtros, totais e exportação.</p>
+  </header>
+
+  <main class="container grid">
+    <!-- Formulário de cadastro -->
+    <section class="card">
+      <h2>Nova batida</h2>
+      <form id="entryForm" autocomplete="off">
+        <div class="form-grid">
+          <label>
+            <span>Colaborador*</span>
+            <input type="text" id="employee" required placeholder="Nome do colaborador"/>
+          </label>
+          <label>
+            <span>Data*</span>
+            <input type="date" id="date" required/>
+          </label>
+          <label>
+            <span>Entrada*</span>
+            <input type="time" id="timeIn" required/>
+          </label>
+          <label>
+            <span>Saída*</span>
+            <input type="time" id="timeOut" required/>
+          </label>
+          <label>
+            <span>Pausa (min)</span>
+            <input type="number" id="breakMin" min="0" step="5" placeholder="ex.: 60"/>
+          </label>
+          <label class="full">
+            <span>Observações</span>
+            <input type="text" id="notes" placeholder="Opcional"/>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="primary">Adicionar</button>
+          <button type="button" id="seedData" class="ghost">Adicionar exemplos</button>
+        </div>
+        <p class="hint">*Campos obrigatórios</p>
+      </form>
+    </section>
+
+    <!-- Filtros e tabela -->
+    <section class="card">
+      <div class="flex-between">
+        <h2>Relatório</h2>
+        <div class="toolbar">
+          <button id="exportCsv" class="ghost">Exportar CSV</button>
+          <button id="printReport" class="ghost">Imprimir</button>
+          <button id="clearAll" class="danger">Limpar dados</button>
+        </div>
+      </div>
+
+      <div class="filters">
+        <label>
+          <span>Colaborador</span>
+          <input type="text" id="filterEmployee" placeholder="Filtrar por nome"/>
+        </label>
+        <label>
+          <span>De</span>
+          <input type="date" id="filterFrom"/>
+        </label>
+        <label>
+          <span>Até</span>
+          <input type="date" id="filterTo"/>
+        </label>
+        <button id="applyFilters" class="primary">Aplicar filtros</button>
+        <button id="resetFilters" class="ghost">Limpar filtros</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="reportTable" aria-describedby="tableCaption">
+          <caption id="tableCaption" class="sr-only">Tabela de batidas registradas</caption>
+          <thead>
+            <tr>
+              <th>Colaborador</th>
+              <th>Data</th>
+              <th>Entrada</th>
+              <th>Saída</th>
+              <th>Entrada Almoço</th>
+              <th>Saída Almoço</th>
+              <th>Total (h)</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="relatorio.js"></script>
+</body>
+</html>
