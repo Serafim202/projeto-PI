@@ -1,0 +1,122 @@
+
+body { 
+  background-image: url('../img/LoginCadastro.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Agora fica no centro */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #b4b4b4;
+    color: #070707;
+
+  }
+  
+ .title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #221900;
+  text-align: center;        /* Centraliza o texto */
+  justify-content: center;   /* Alinha o conteúdo no centro se for flex */
+  display: flex;             /* Já estava presente, mantemos */
+  align-items: center;
+  position: relative;
+  padding-left: 0;           /* Remove o padding esquerdo que afastava */
+}
+  
+  .message, 
+  .signin {
+    font-size: 14.5px;
+    color: #ca6c00;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  
+  .signin a {
+    color: #ca6c00;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: #00bfff;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .input {
+    font-size: medium;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color:  #ca6c00;
+  }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .logo {
+    max-width: 200px;
+  }
+}
